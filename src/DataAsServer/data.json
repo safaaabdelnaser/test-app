@@ -1,0 +1,93 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "phone1",
+      "price": 3000,
+      "quantity": 2,
+      "imgUrl": "https://fakeimg.pl/150x100/",
+      "catID": 1
+    },
+    {
+      "id": "2",
+      "name": "phone2",
+      "price": 4000,
+      "quantity": 2,
+      "imgUrl": "https://fakeimg.pl/150x100/",
+      "catID": 1
+    },
+    {
+      "id": "3",
+      "name": "laptop1",
+      "price": 20000,
+      "quantity": 3,
+      "imgUrl": "https://fakeimg.pl/150x100/",
+      "catID": 2
+    },
+    {
+      "id": "4",
+      "name": "laptop2",
+      "price": 25000,
+      "quantity": 1,
+      "imgUrl": "https://fakeimg.pl/150x100/",
+      "catID": 2
+    },
+    {
+      "id": "5",
+      "name": "tablet1",
+      "price": 3500,
+      "quantity": 5,
+      "imgUrl": "https://fakeimg.pl/150x100/",
+      "catID": 3
+    },
+    {
+      "id": "6",
+      "name": "tablet2",
+      "price": 7500,
+      "quantity": 0,
+      "imgUrl": "https://fakeimg.pl/150x100/",
+      "catID": 3
+    },
+    {
+      "id": "b44f",
+      "name": "new prod",
+      "price": 2222,
+      "quantity": 3,
+      "imgUrl": "C:\\fakepath\\133718542565552763.jpg",
+      "catID": "2"
+    },
+    {
+      "id": "e9b2",
+      "name": "test2",
+      "price": 33,
+      "quantity": 2,
+      "imgUrl": "C:\\fakepath\\d.PNG",
+      "catID": "1"
+    },
+    {
+      "id": "6c5a",
+      "price": 2000,
+      "name": "test",
+      "quantity": 4,
+      "imgUrl": "C:\\fakepath\\133700997470225324.jpg",
+      "catID": "1"
+    }
+  ],
+  "categories": [
+    {
+      "catID": 1,
+      "catName": "Phones",
+      "id": "5339"
+    },
+    {
+      "catID": 2,
+      "catName": "Laptop",
+      "id": "239d"
+    },
+    {
+      "catID": 3,
+      "catName": "Tablet",
+      "id": "c8c0"
+    }
+  ]
+}

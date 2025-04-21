@@ -1,0 +1,64 @@
+<!-- template driven form -->
+<form (submit)="addNewProduct()" #addNewProductForm="ngForm">
+    <div class="mb-3">
+        <label for="Title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="Title" aria-describedby="title" name="name" required
+            pattern='^[a-zA-Z]{3,15}$' [(ngModel)]="newProduct.name" #prodName="ngModel">
+    </div>
+    <div class="text-danger">
+        @if(prodName.invalid && prodName.touched){
+        @if(prodName.errors?.['required']){
+        <span>Title of product is required</span>
+        }
+        @else if(prodName.errors?.['pattern']){
+        <span>Title must be 3 char</span>
+
+        }
+        }
+
+    </div>
+    <div class="mb-3">
+        <label for="Price" class="form-label">Price</label>
+        <input type="number" class="form-control" id="Price" name="price" [(ngModel)]="newProduct.price"
+            #prodPrice="ngModel" min="1" required>
+    </div>
+    <div class="text-danger">
+        @if(prodPrice.invalid && prodPrice.touched){
+        @if(prodPrice.errors?.['required']){
+        <span>Price of product is required</span>
+        }}
+    </div>
+    <div class="mb-3 ">
+        <label class="form-check-label" for="quantity">Quantity</label>
+        <input type="number" class="form-control" id="quantity" name="quantity" [(ngModel)]="newProduct.quantity"
+            #prodQuantity="ngModel" required min="1">
+    </div>
+    <div class="text-danger">
+        @if(prodQuantity.invalid && prodQuantity.touched){
+        @if(prodQuantity.errors?.['required']){
+        <span>Quantity of product is required</span>
+        }}
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input type="file" class="form-control" id="image" name="imgUrl" [(ngModel)]="newProduct.imgUrl">
+    </div>
+    <select class="form-select" aria-label="Default select" name="catID" [(ngModel)]="newProduct.catID" required
+        #catOfProd="ngModel">
+        <option selected>select category</option>
+        @for(item of categoryList; track item.catID;){
+        <option [value]="item.catID">{{item.catName}}</option>
+        }
+        @empty {
+        <h3>Not Category Found</h3>
+        }
+
+    </select>
+    <div class="text-danger">
+        @if(catOfProd.invalid && catOfProd.touched){
+        @if(catOfProd.errors?.['required']){
+        <span>category of product is required</span>
+        }}
+    </div>
+    <button type="submit" class="btn btn-primary my-2" [disabled]="addNewProductForm.invalid">Submit</button>
+</form>

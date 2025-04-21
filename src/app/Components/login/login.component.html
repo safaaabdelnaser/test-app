@@ -1,0 +1,3 @@
+<button class="btn btn-outline-primary m-2" [disabled]="isLoggedIn" (click)="login()">Sign In</button>
+
+<button class="btn btn-outline-danger" [disabled]="!isLoggedIn" (click)="logout()">Sign Out</button>

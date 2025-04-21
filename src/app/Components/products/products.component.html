@@ -1,0 +1,60 @@
+@if (isProductPage)
+{<div class="my-4">
+    <button type="button" class="btn btn-primary" (click)="navgateOnNewProductPage()">Add New Product</button>
+</div>
+}
+
+<div class="row g-4">
+    <!-- For-- structural  directive -->
+    @for (item of productListFillter; track item.id){
+    <!-- Class binding -->
+    <!-- <div class="col-lg-4 col-md-6 col-sm-12 " [class.d-none]="item.catID!=selectedCategoryID"> -->
+    <div class="col-lg-4 col-md-6 col-sm-12 ">
+        <div class="card" style="width: 18rem;">
+            <!-- Property binding -->
+            <img class="card-img-top" [src]="item.imgUrl" [alt]="item.name">
+            <!-- Custom directive -->
+            <div class="card-body" appHighlightCard="white">
+                <!-- Data binding -->
+                <h5 class="card-title">{{item.name}}</h5>
+
+                <p class="card-text">Quantity:
+                    <!-- If-- structural  directive -->
+                    @if(item.quantity===0){
+                    <!-- Style binding -->
+                    <span [style.color]="item.quantity===0?'red':'black'">Out Off Stock</span>
+                    }
+                    @else if(item.quantity===1) {
+                    {{"Last Item in Stock"}}
+                    }
+                    @else{
+                    {{item.quantity}}
+                    }
+                </p>
+
+                @if(item.price>5000 && item.quantity>0){
+                <!-- Pure pipe -->
+                <p class="card-text ">Price: <span class="text-decoration-line-through">{{item.price |currency
+                        :'EGP'}}</span></p>
+                <!-- Custom Pipe called discount -->
+                <p class="card-text">Price after discount: {{item.price |discount:.03 |currency :'EGP'}}</p>
+                }
+                @else{
+                <p class="card-text ">Price: {{item.price |currency :'EGP'}}</p>
+                }
+
+                <div class="container d-flex justify-content-center align-items-center">
+                    <button class="btn btn-dark text-center" (click)="getDetialsOfProduct(item.id)"
+                        style="width: 100%;">
+                        Details
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    }
+    @empty{
+    <h2>No Product Found</h2>
+    }
+</div>

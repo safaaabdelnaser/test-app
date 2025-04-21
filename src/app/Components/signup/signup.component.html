@@ -1,0 +1,62 @@
+<h3>data of user:{{userForm.value|json}}</h3>
+<form [formGroup]="userForm" (submit)="addUser()">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" formControlName="name">
+        @if(name?.touched && name?.invalid){
+        <div class="text-danger">
+            @if(name?.errors?.['required']){
+            <p>Name is Required</p>
+            }
+            @else if (name?.errors?.['pattern']) {
+            <p>Name must be at least 3 char</p>
+            }
+        </div>
+        }
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email :</label>
+        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+            formControlName="email">
+        @if(email?.touched && email?.invalid){
+        <div class="text-danger">
+            @if(email?.errors?.['required']){
+            <p>Email is Required</p>
+            }
+        </div>}
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" class="form-control" id="password" name="password" formControlName="password">
+        @if(password?.touched && password?.invalid){
+        <div class="text-danger">
+            @if(password?.errors?.['required']){
+            <p>Password is Required</p>
+            }
+        </div>}
+    </div>
+    <div formGroupName="address">
+        <div class="mb-3">
+            <label for="city" class="form-label">City:</label>
+            <input type="text" class="form-control" id="city" name="city" formControlName="city">
+            @if(city?.touched && city?.invalid){
+            <div class="text-danger">
+                @if(city?.errors?.['required']){
+                <p>City is Required</p>
+                }
+            </div>}
+        </div>
+        <div class="mb-3">
+            <label for="street" class="form-label">Street:</label>
+            <input type="text" class="form-control" id="street" name="street" formControlName="street">
+            @if(street?.touched && street?.invalid){
+            <div class="text-danger">
+                @if(street?.errors?.['required']){
+                <p>Street is Required</p>
+                }
+            </div>}
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+</form>

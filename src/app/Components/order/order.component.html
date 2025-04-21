@@ -1,0 +1,13 @@
+<p>Total Price: {{totalOrderPrice}}</p>
+
+<!-- Two way binding -->
+<select class="form-select form-select-lg my-2" [(ngModel)]="selectedCategoryID">
+    <option value="0" selected>All</option>
+    @for (cat of categoryList; track cat.catID){
+    <option [value]="cat.catID">{{cat.catName}}</option>
+    }
+    @empty {
+    <h2>No Category Found</h2>
+    }
+</select>
+<app-products [categoryIdFromParent]="selectedCategoryID"></app-products>

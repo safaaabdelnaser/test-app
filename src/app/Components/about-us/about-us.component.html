@@ -1,0 +1,17 @@
+<h3>Hello In About US Page</h3>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a [routerLink]="['/aboutUs']" routerLinkActive="router-link-active">About Us</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a [routerLink]="['/aboutUs/values']" routerLinkActive="router-link-active">Values</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a [routerLink]="['/aboutUs/vision']" routerLinkActive="router-link-active">Vision</a>
+        </li>
+
+    </ol>
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,19 @@
+<div class="container my-5 d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="col text-center">
+            <div class="card bg-info-subtle">
+                <img [src]="singleProduct.imgUrl" class="card-img-top" [alt]="singleProduct.name" width="50"
+                    height="150">
+                <div class="card-body">
+                    <h5 class="card-title">Name:{{singleProduct.name}}</h5>
+                    <h4 class="text-danger">Price:{{singleProduct.price}}</h4>
+                    <h4 class="text-dark"> Quantity:{{singleProduct.quantity}}</h4>
+                    <!-- Event Binding -- from view to ts-->
+                    <input type="number" #countProduct min="1" />
+                    <button class="btn btn-success btn-sm mx-2"
+                        (click)="getTotalPrice(countProduct.value,singleProduct.price)">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
