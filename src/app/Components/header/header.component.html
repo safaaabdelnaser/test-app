@@ -12,10 +12,15 @@
             <a class="nav-item nav-link" [routerLink]="['/product']" routerLinkActive="router-link-active">Products</a>
             <a class="nav-item nav-link" [routerLink]="['/signIn']" routerLinkActive="router-link-active">
                 @if(!youLoggedInOrNot){
-                <span>Sign In</span>
+                <span>Sign In
+                    <fa-icon [icon]="loginIcon"></fa-icon>
+                </span>
                 }
                 @else{
-                <span>Sign Out</span>
+                <span>Sign Out
+                    <fa-icon [icon]="logoutIcon"></fa-icon>
+
+                </span>
 
                 }
             </a>

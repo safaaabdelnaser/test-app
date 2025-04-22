@@ -6,7 +6,6 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-
 @Component({
   selector: 'app-signup',
   standalone: true,
