@@ -7,7 +7,7 @@ import {
   viewChild,
 } from '@angular/core';
 import { OrderComponent } from '../order/order.component';
-
+// import { SwiperModule } from 'swiper/angular';
 @Component({
   selector: 'app-home',
   standalone: true,

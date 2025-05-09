@@ -89,5 +89,44 @@
       "catName": "Tablet",
       "id": "c8c0"
     }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "safaa",
+      "email": "safaa@gmail.com",
+      "password": "gssg2",
+      "address": { "city": "qena", "street": "qena" }
+    },
+    {
+      "id": "8aeb",
+      "name": "aya abdel naser",
+      "email": "aya@gmail.com",
+      "password": "123456",
+      "address": {
+        "city": "cairo",
+        "street": "30 march"
+      }
+    },
+    {
+      "id": "8aeb",
+      "name": "seif abdel naser",
+      "email": "seidf@gmail.com",
+      "password": "123456",
+      "address": {
+        "city": "cairo",
+        "street": "30 march"
+      }
+    },
+    {
+      "id": "8aeb",
+      "name": "khaled abdel naser",
+      "email": "khaled@gmail.com",
+      "password": "1232456",
+      "address": {
+        "city": "cairo",
+        "street": "3 march"
+      }
+    }
   ]
 }

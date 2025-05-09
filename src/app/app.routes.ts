@@ -10,6 +10,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { authUserOnProductsGuard } from './Guards/auth-user-on-products.guard';
 import { AddProductComponent } from './Components/add-product/add-product.component';
 import { SignupComponent } from './Components/signup/signup.component';
+import { UsersComponent } from './Components/users/users.component';
 // Routing
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -38,6 +39,14 @@ export const routes: Routes = [
   { path: 'product/:idProd', component: ProductDetialsComponent },
   { path: 'signIn', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  {
+    path: 'users',
+    loadComponent: () =>
+      import('./Components/users/users.component').then(
+        (obj) => obj.UsersComponent
+      ),
+    canActivate: [authUserOnProductsGuard],
+  },
 
   { path: 'addNewProduct', component: AddProductComponent },
 
